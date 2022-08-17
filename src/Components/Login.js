@@ -34,14 +34,20 @@ const Login = () => {
   };
 
   return (
-    <div className="signUp__form">
-      <form onSubmit={handleSubmit}>
-        {error && <Alert severity="error">{ error }</Alert>}
-        <TextField id="outlined-basic" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} />
-        <TextField id="outlined-basic" label="Password" variant="outlined" onChange={(e) => setPassword(e.target.value)} />
-        <Button variant="contained" type="Submit">Sign Up</Button>
-        <GoogleButton onClick={googleLogIn} />
-      </form>
+    <div className="login">
+      <div className="login__heading">
+        <img className="login__heading--image"src="https://svgshare.com/i/kBt.svg" alt="Piggy Bank"></img>
+        <h1 className="login__heading--heading">wshlst</h1>
+      </div>
+      <div className="login__form">
+        <form className="form" onSubmit={handleSubmit}>
+          {error && <Alert severity="error">{ error }</Alert>}
+          <TextField className="form__input" id="outlined-basic" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} />
+          <TextField className="form__input" id="outlined-basic" label="Password" variant="outlined" onChange={(e) => setPassword(e.target.value)} />
+          <Button variant="contained" type="Submit">Log In</Button>
+          <GoogleButton onClick={googleLogIn} />
+        </form>
+      </div>
       <p>New? <Link to="/signup"> Sign Up </Link></p>
     </div>
   )
