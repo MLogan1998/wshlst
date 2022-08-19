@@ -1,9 +1,9 @@
-import { React } from 'react';
+import { React, useEffect } from 'react';
 import { useUserAuth } from '../Context/UserAuthContext';
 import { Button } from "@mui/material";
 
 const Home = () => {
-  const { user, logOut } = useUserAuth();
+  const { user, logOut, getUserId, connection } = useUserAuth();
 
   const handleLogOut = async () => {
     try{
@@ -12,6 +12,15 @@ const Home = () => {
       console.log(err);
     }
   }
+
+  connection();
+
+  // useEffect(() => {
+  //   getIt();
+  // }, [])
+
+
+  const getIt = () => console.log(getUserId())
 
   return (
     <div>

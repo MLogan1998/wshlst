@@ -8,7 +8,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("")
   const [error, setError ] = useState("")
-  const { logIn, signInWithGoogle } = useUserAuth();
+  const { logIn, signInWithGoogle, connection } = useUserAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -22,6 +22,8 @@ const Login = () => {
       console.log(err);
     }
   }
+
+  connection();
 
   const googleLogIn = async (e) => {
     e.preventDefault();
