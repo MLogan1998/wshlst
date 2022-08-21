@@ -19,12 +19,17 @@ body {
     &--heading {
       text-transform: lowercase;
       font-size: 6.5rem;
-      color: $primary-blue;
+      color: $primary-yellow;
       letter-spacing: 1.1rem;
       font-family: "Poppins";
       font-weight: 600;
-      text-shadow: 0 1rem 2rem rgba(255, 255, 255, 0.25);
+      text-shadow: 0 1rem 2rem rgba(163, 163, 163, 0.45);
       margin-right: -1.7rem;
+    }
+
+    &--image {
+      object-fit: contain;
+      width: 290px;
     }
   }
 
@@ -38,7 +43,8 @@ body {
 
 
 .login__form {
-  border: 1px solid white;
+  // border: 1px solid white;
+  width: 290px;
 }
 
 .form {
@@ -51,5 +57,14 @@ body {
   &__input {
     margin: 10px !important;
     color: $primary-blue !important;
+    background-color: #eeeeee;
+   // font-size: 24rem !important;
+    width: 100%;
+  }
+
+  &__button {
+    margin-bottom: 10px !important;
+    align-self: flex-start;
+    font-size: 1.3rem !important;
   }
 }
