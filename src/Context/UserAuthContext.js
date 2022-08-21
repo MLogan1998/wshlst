@@ -17,10 +17,14 @@ export function UserAuthContextProvider({ children }) {
 
   const signUp = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 
-  const logIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
+  const logIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  }
 
-  const logOut = () => signOut(auth);
-
+  const logOut = () => {
+    localStorage.removeItem('f_token');
+    signOut(auth);
+  }
 
   const signInWithGoogle =  () => {
     const google = new GoogleAuthProvider();
@@ -29,17 +33,10 @@ export function UserAuthContextProvider({ children }) {
 
   const getUserId = () => firebase.auth().currentUser.uid;
 
-  const connection = () => {
-    if (!firebase.apps.length) {
-      firebase.initializeApp(firebaseConfig);
-    } else {
-      firebase.app();
-    }
-  }
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      if(auth.currentUser){localStorage.setItem('f_token', auth.currentUser.uid);}
     })
     return () => {
       unsubscribe();
@@ -48,7 +45,7 @@ export function UserAuthContextProvider({ children }) {
 
 
   return (
-    <userAuthContext.Provider value={{user, signUp, logIn, logOut, signInWithGoogle, getUserId, connection }}>{children}</userAuthContext.Provider>
+    <userAuthContext.Provider value={{user, signUp, logIn, logOut, signInWithGoogle, getUserId, }}>{children}</userAuthContext.Provider>
   )
 }
 

@@ -3,7 +3,7 @@ import { TextField, Button, Alert } from "@mui/material";
 import { Link, useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../Context/UserAuthContext';
 
-const SignUp = () => {
+export const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("")
   const [error, setError ] = useState("")
@@ -39,5 +39,3 @@ const SignUp = () => {
     </div>
   )
 }
-
-export default SignUp;
