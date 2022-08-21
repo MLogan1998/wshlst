@@ -3,33 +3,33 @@ body {
 }
 
 .login {
-  width: 100vw;
-  height:100vh;
-  position:relative;
+  border-top: 15px solid $primary-yellow;
 
   &__heading {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    margin: 0 auto;
-    width:90%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
     &--heading {
+      
       text-transform: lowercase;
-      font-size: 6.5rem;
+      font-size: 6.7rem;
       color: $primary-yellow;
-      letter-spacing: 1.1rem;
-      font-family: "Poppins";
+      font-family: "Montserrat";
       font-weight: 600;
-      text-shadow: 0 1rem 2rem rgba(163, 163, 163, 0.45);
-      margin-right: -1.7rem;
+      text-shadow: 0 1rem 2rem rgba(56, 56, 56, 0.95);
     }
 
     &--image {
       object-fit: contain;
       width: 290px;
+    }
+
+    &--google {
+      margin-top: 14rem;
+      font-weight: bold;
     }
   }
 
@@ -43,7 +43,6 @@ body {
 
 
 .login__form {
-  // border: 1px solid white;
   width: 290px;
 }
 
@@ -58,12 +57,10 @@ body {
     margin: 10px !important;
     color: $primary-blue !important;
     background-color: #eeeeee;
-   // font-size: 24rem !important;
     width: 100%;
   }
 
   &__button {
-    margin-bottom: 10px !important;
     align-self: flex-start;
     font-size: 1.3rem !important;
   }

@@ -38,17 +38,20 @@ export const Login = () => {
       <div className="login__heading">
         <img className="login__heading--image"src="https://i.imgur.com/T6LLdAN.png" alt="Piggy Bank"></img>
         <h1 className="login__heading--heading">wishlist</h1>
+        <GoogleButton className="login__heading--google" onClick={googleLogIn} type="light" />
       </div>
       <div className="login__form">
         <form className="form" onSubmit={handleSubmit}>
           {error && <Alert severity="error">{ error }</Alert>}
-          <TextField className="form__input" id="outlined-basic1" label="Email" variant="filled" onChange={(e) => setEmail(e.target.value)} />
+          {/* <TextField className="form__input" id="outlined-basic1" label="Email" variant="filled" onChange={(e) => setEmail(e.target.value)} />
           <TextField className="form__input" id="outlined-basic" label="Password" variant="filled" onChange={(e) => setPassword(e.target.value)} />
-          <Button className="form__button" variant="contained" type="Submit">Log In</Button>
-          <GoogleButton onClick={googleLogIn} />
+          <Button className="form__button" variant="contained" type="Submit">Log In</Button> */}
+          
         </form>
-      </div>
-      <p>New? <Link to="/signup"> Sign Up </Link></p>
+        {/* <p>New? <Link to="/signup"> Sign Up </Link></p>
+     
+      <p>New? <Link to="/signup"> Sign Up </Link></p> */}
+       </div>
     </div>
   )
 }
