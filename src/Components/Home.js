@@ -2,8 +2,8 @@ import { React, useEffect } from 'react';
 import { useUserAuth } from '../Context/UserAuthContext';
 import { Button } from "@mui/material";
 
-const Home = () => {
-  const { user, logOut, getUserId, connection } = useUserAuth();
+export const Home = () => {
+  const { user, logOut, getUserId } = useUserAuth();
 
   const handleLogOut = async () => {
     try{
@@ -13,21 +13,12 @@ const Home = () => {
     }
   }
 
-  connection();
-
-  // useEffect(() => {
-  //   getIt();
-  // }, [])
-
-
-  const getIt = () => console.log(getUserId())
+  const userId = localStorage.getItem('f_token');
 
   return (
     <div>
-      <h1>{user && user.email}</h1>
+      <h1>{user && userId}</h1>
       <Button variant="contained" onClick={handleLogOut}>Log Out</Button>
     </div>
   )
 }
-
-export default Home;
