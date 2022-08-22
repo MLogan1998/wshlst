@@ -19,6 +19,7 @@ export const Home = () => {
     <div>
       <h1>{user && userId}</h1>
       <Button variant="contained" onClick={handleLogOut}>Log Out</Button>
+      <a href="/list">List</a>
     </div>
   )
 }

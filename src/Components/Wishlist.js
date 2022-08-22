@@ -6,7 +6,9 @@ import { UserAuthContextProvider } from '../Context/UserAuthContext';
 import ProtectedRoute from './ProtectedRoute';
 import connection from '../Helper/connection';
 import { Home } from './Home';
+import { MyList } from './List';
 import { useUserAuth } from '../Context/UserAuthContext';
+import { ItemsProvider } from '../Context/ItemsContext';
 
 
 
@@ -29,11 +31,14 @@ export const Wishlist = () => {
   return (
     <div className="App">
       <UserAuthContextProvider>
-        <Routes>
-          <Route exact path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-          <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-          <Route path="/login" element={user ? <Navigate to="/home" /> : <Login />} />
-        </Routes>
+        <ItemsProvider>
+          <Routes>
+            <Route exact path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+            <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+            <Route path="/login" element={user ? <Navigate to="/home" /> : <Login />} />
+            <Route path="list" element={<ProtectedRoute><MyList /></ProtectedRoute>} />
+          </Routes>
+        </ItemsProvider>
       </UserAuthContextProvider>
     </div>
   );
