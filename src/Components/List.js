@@ -13,13 +13,13 @@ export const MyList = () => {
     getItemsByUID(uid)
   }, [])
 
-  const myItems = items ? items.map((item) => (<Item key={item.id} item={item} />)) : '';
+  const myItems = items ? items.map((item, idx) => (<Item key={idx} item={item} divider={idx < items.length - 1}/>)) : '';
 
   return (
     <div>
           <List
       sx={{
-        width: '100%',
+        width: '80%',
         maxWidth: 360,
         bgcolor: 'background.paper',
       }}
