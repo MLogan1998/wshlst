@@ -1,13 +1,14 @@
 import React, { useContext, useEffect } from 'react';
 import { ItemsContext } from '../Context/ItemsContext';
 import { Item } from './Item';
+import { UserAuthContextProvider, useUserAuth } from '../Context/UserAuthContext';
 import List from '@mui/material/List';
 
 
 export const MyList = () => {
   const { getItemsByUID, items } = useContext(ItemsContext)
-  
-  const uid = localStorage.getItem('f_token');
+  let user = useUserAuth();
+  const uid = user.user.uid
 
   useEffect(() => {
     getItemsByUID(uid)
