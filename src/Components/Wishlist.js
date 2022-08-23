@@ -9,29 +9,33 @@ import { Home } from './Home';
 import { MyList } from './List';
 import { useUserAuth } from '../Context/UserAuthContext';
 import { ItemsProvider } from '../Context/ItemsContext';
+import { BankHeader } from './BankHeader';
 
 
 
 export const Wishlist = () => {
-  // const [ auth, setAuth ] = useState(false);
+  const [ auth, setAuth ] = useState('');
 
-  // useEffect(() => {
-  //   const isAuthed = localStorage.getItem('f_token')
-  //   console.log(isAuthed)
-  //   if (isAuthed) {
-  //     setAuth(true)
-  //   } else {
-  //     setAuth(false)
-  //   }
-  // }, [auth]);
-  let user = useUserAuth();
+  useEffect(() => {
+    const isAuthed = localStorage.getItem('f_token')
+    console.log(isAuthed)
+    if (isAuthed) {
+      setAuth(true)
+    } else {
+      setAuth(false)
+    }
+  }, []);
+  
 
   connection();
+
+  let user = useUserAuth();
 
   return (
     <div className="App">
       <UserAuthContextProvider>
         <ItemsProvider>
+          { auth && (auth) ? (<BankHeader />) : '' }
           <Routes>
             <Route exact path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
             <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
