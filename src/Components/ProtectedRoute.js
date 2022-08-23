@@ -2,7 +2,7 @@ import { React } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useUserAuth } from '../Context/UserAuthContext';
 
-const ProtectedRoute = ({ children }) => {
+export const ProtectedRoute = ({ children }) => {
   let { user } = useUserAuth();
 
   if (!user) {
@@ -12,5 +12,3 @@ const ProtectedRoute = ({ children }) => {
   }
   return children;
 }
-
-export default ProtectedRoute;
