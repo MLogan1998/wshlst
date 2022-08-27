@@ -10,6 +10,7 @@ import { BankHeader } from './BankHeader';
 import { Login } from './Login';
 import { Home } from './Home';
 import { MyList } from './List';
+import { Deposit } from './Deposit';
 
 export const Wishlist = () => {
   
@@ -21,13 +22,14 @@ export const Wishlist = () => {
     <div className="App">
       <UserAuthContextProvider>
         <ItemsProvider>
-        { (user.user) ? (<BankHeader />) : '' }
-          <Routes>
-            <Route exact path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-            <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-            <Route path="/login" element={ (user.user) ? (<Home />) : (<Login />)} />
-            <Route path="list" element={<ProtectedRoute><MyList /></ProtectedRoute>} />
-          </Routes>
+          { (user.user) ? (<BankHeader />) : '' }
+            <Routes>
+              <Route exact path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+              <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+              <Route path="/login" element={ (user.user) ? (<Home />) : (<Login />)} />
+              <Route path="/list" element={<ProtectedRoute><MyList /></ProtectedRoute>} />
+              <Route path="/deposit" element={<ProtectedRoute><Deposit /></ProtectedRoute>} />
+            </Routes>
         </ItemsProvider>
       </UserAuthContextProvider>
     </div>

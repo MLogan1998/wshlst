@@ -37,7 +37,7 @@ export const Login = () => {
     <div className="login">
       <div className="login__heading">
         <img className="login__heading--image"src="https://i.imgur.com/T6LLdAN.png" alt="Piggy Bank"></img>
-        <h1 className="login__heading--heading">wishlist</h1>
+        <h1 className="heading login__heading--heading">wishlist</h1>
         <GoogleButton className="login__heading--google" onClick={googleLogIn} type="light" />
       </div>
       <div className="login__form">
