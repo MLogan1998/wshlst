@@ -1,5 +1,12 @@
-.MuiTypography-root {
-    color: white !important;
+.css-1pnmrwp-MuiTypography-root {
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 20px !important;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  color: white !important;
+  margin-top: 15px  !important;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -17,8 +24,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .deposit__contents {
   width: 400px;
+  height: 350px;
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   flex-direction: column;
   text-align: center;
   margin: 0 auto;
@@ -30,7 +38,6 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 20px !important;
   background-color: rgba(99, 98, 98, 0.05);
   box-shadow: 0 1rem 1rem rgba(0,0,0, .3);
-  border-radius: 5px;
 
   &--image {
     width: 25%;
@@ -39,5 +46,10 @@ input[type=number]::-webkit-outer-spin-button {
 
   &--heading {
     font-size: 3rem;
+  }
+
+  &--error {
+    position: absolute;
+    top: 73%
   }
 }
