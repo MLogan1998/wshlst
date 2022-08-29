@@ -1,20 +1,25 @@
 import { React, useEffect, useContext } from 'react';
-import { useUserAuth } from '../Context/UserAuthContext';
 import { ItemsContext } from '../Context/ItemsContext'
 
 export const Bank = () => {
-  const { deposits, getDepositsByUID, getAccountBalance, balance } = useContext(ItemsContext)
-  let user = useUserAuth();
-  const uid = user.user.uid
+  const { getDepositsByUID, getAccountBalance, balance, depos } = useContext(ItemsContext)
+  const uid = localStorage.getItem('f_token');
 
   useEffect(() => {
     getDepositsByUID(uid)
-    if (deposits && deposits.length > 0) {
-     getAccountBalance();
-    }
-  }, [deposits])
+  }, [])
+
+  useEffect(() => {
+    if(depos && depos.length > 0 ) { 
+      getAccountBalance()
+    }     
+}, [depos])
+
+
+const displayBalance = depos && balance && depos.length ? ( balance.amount).toFixed(2) : ''
+
 
   return(
-    <h1 className='bank__amount'>${balance.amount}</h1>
+    <h1 className='bank__amount'>${ displayBalance }</h1>
   )
 }
