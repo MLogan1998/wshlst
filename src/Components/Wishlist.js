@@ -11,6 +11,7 @@ import { Login } from './Login';
 import { Home } from './Home';
 import { MyList } from './List';
 import { Deposit } from './Deposit';
+import { Transactions } from './Transactions';
 
 export const Wishlist = () => {
   
@@ -29,6 +30,7 @@ export const Wishlist = () => {
               <Route path="/login" element={ (user.user) ? (<Home />) : (<Login />)} />
               <Route path="/list" element={<ProtectedRoute><MyList /></ProtectedRoute>} />
               <Route path="/deposit" element={<ProtectedRoute><Deposit /></ProtectedRoute>} />
+              <Route path="/transactions" element={<ProtectedRoute><Transactions/></ProtectedRoute>} />
             </Routes>
         </ItemsProvider>
       </UserAuthContextProvider>

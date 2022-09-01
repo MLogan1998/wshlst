@@ -50,6 +50,8 @@ export const Deposit = () => {
       addDeposit({
         uid: userId,
         amount: parseFloat(amount),
+        id: "id" + Math.random().toString(16).slice(2),
+        date: new Date().toLocaleDateString()
       })
      getDepositsByUID(userId);
     }
