@@ -36,6 +36,10 @@ export const TransDeposits = () => {
         columns={columns}
         rows={depos}
         autoHeight
+        // autoPageSize
+        // rowsPerPageOptions={10}
+        pageSize={[10]}
+        rowsPerPageOptions={[10]}
       />
     </div>
   )

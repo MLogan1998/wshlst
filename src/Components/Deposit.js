@@ -7,6 +7,9 @@ import SendIcon from '@mui/icons-material/Send';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    "& .MuiInputAdornment-root": {
+      color: 'white',
+    },
     "& .MuiFilledInput-underline:after": {
       borderBottomColor: '#ffd345'
     },
@@ -63,7 +66,6 @@ export const Deposit = () => {
   return (
     <div className='container'>
     <div className="deposit__contents">
-      {/* <h1 className="heading deposit__contents--heading">Deposit</h1> */}
       <img className="deposit__contents--image" src="https://i.imgur.com/T6LLdAN.png" alt="Piggy Bank"></img>
       <TextField id="outlined-basic"
           label="Amount" 
