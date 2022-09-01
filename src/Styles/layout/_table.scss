@@ -1,0 +1,20 @@
+.deposit__table {
+  width: 260px;
+}
+
+.MuiDataGrid-row {
+  font-weight: bold;
+
+  &:nth-child(odd) {
+    background-color: rgb(240, 240, 240);
+    transition: 0.15s;
+  }
+
+  &:nth-child(even) {
+    background-color: rgb(210, 210, 210);
+    transition: 0.15s;
+  }
+  &:hover {
+    background-color: $primary-yellow !important;
+  }
+}

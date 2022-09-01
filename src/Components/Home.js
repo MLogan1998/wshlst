@@ -25,6 +25,10 @@ export const Home = () => {
     navigate('/deposit');
   }
 
+  const toTransactions = () => {
+    navigate('/transactions');
+  }
+
   const userId = localStorage.getItem('f_token');
 
   return (
@@ -33,6 +37,7 @@ export const Home = () => {
       <Button variant="contained" onClick={handleLogOut}>Log Out</Button>
       <Button variant="contained" onClick={toList}>My Wishlist</Button>
       <Button variant="contained" onClick={toDeposit}>Deposit Funds</Button>
+      <Button variant="contained" onClick={toTransactions}>Transactions</Button>
     </div>
   )
 }
