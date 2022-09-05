@@ -3,19 +3,26 @@ body {
 }
 
 .login {
-  border-top: 15px solid $primary-yellow;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+
 
   &__heading {
-    height:100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-color: $primary-green;
+    height: 70%;
+    width: 100vw;
+    position: relative;
     
     &--heading {
       text-transform: lowercase;
-      font-size: 4.6rem;
-
+      font-size: 5.6rem;
+      position:  absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white !important;
+      letter-spacing: .3rem;
     }
 
     &--image {
@@ -26,38 +33,21 @@ body {
     &--google {
       margin-top: 14rem;
       font-weight: bold;
+
     }
   }
 
-  &__form {
-    position: absolute;
-    top: 68%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
+  &__google {
+    height: 30%;
+    width: 100vw;
+    margin: 0 auto;
+    position: relative;
 
-
-.login__form {
-  width: 290px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-weight: bold;
-  
-
-  &__input {
-    margin: 10px !important;
-    color: $primary-blue !important;
-    background-color: #eeeeee;
-    width: 100%;
-  }
-
-  &__button {
-    align-self: flex-start;
-    font-size: 1.3rem !important;
+    &--button {
+      position:  absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }
