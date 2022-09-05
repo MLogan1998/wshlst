@@ -1,8 +1,10 @@
-import { React, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { TextField, Button, Alert } from "@mui/material";
+import { React, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Alert } from "@mui/material";
 import { useUserAuth } from '../Context/UserAuthContext';
 import { GoogleButton } from 'react-google-button'
+import Confetti from 'react-confetti'
+import { useWindowSize } from 'react-use';
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -10,6 +12,8 @@ export const Login = () => {
   const [error, setError ] = useState("")
   const { logIn, signInWithGoogle } = useUserAuth();
   const navigate = useNavigate();
+  
+  const { width, height } = useWindowSize()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,23 +39,18 @@ export const Login = () => {
 
   return (
     <div className="login">
-      <div className="login__heading">
-        <img className="login__heading--image"src="https://i.imgur.com/T6LLdAN.png" alt="Piggy Bank"></img>
-        <h1 className="heading login__heading--heading">wishlist</h1>
-        <GoogleButton className="login__heading--google" onClick={googleLogIn} type="light" />
-      </div>
-      <div className="login__form">
-        <form className="form" onSubmit={handleSubmit}>
-          {error && <Alert severity="error">{ error }</Alert>}
-          {/* <TextField className="form__input" id="outlined-basic1" label="Email" variant="filled" onChange={(e) => setEmail(e.target.value)} />
-          <TextField className="form__input" id="outlined-basic" label="Password" variant="filled" onChange={(e) => setPassword(e.target.value)} />
-          <Button className="form__button" variant="contained" type="Submit">Log In</Button> */}
-          
-        </form>
-        {/* <p>New? <Link to="/signup"> Sign Up </Link></p>
-     
-      <p>New? <Link to="/signup"> Sign Up </Link></p> */}
-       </div>
+       <Confetti
+          width={width}
+          height={height}
+          colors={['#6fef71']} 
+        />
+        <div className="login__heading">
+          <p className="heading login__heading--heading">wishlist</p>
+        </div>
+        <div className="login__google">
+          <GoogleButton className="login__google--button" onClick={googleLogIn} type="light" />
+        </div>
     </div>
+
   )
 }

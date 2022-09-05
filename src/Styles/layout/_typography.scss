@@ -1,6 +1,14 @@
 .heading {
   color: $primary-yellow;
-  font-family: "Lato";
-  font-weight: 600;
-  text-shadow: 0 1rem 2rem rgba(56, 56, 56, 0.95);
+  font-family: $primary-font;
+  font-weight: bold ;
+  text-shadow: 1rem 1rem 2rem rgba(233, 233, 233, 0.45);
 }
+
+.green-text { color: $primary-green; }
+
+.blue-text { color: $primary-blue; }
+
+.orange-text { color: $primary-orange }
+
+.red-text { color: $primary-red }
