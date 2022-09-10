@@ -1,6 +1,17 @@
+.header {
+  position: relative;
+  min-height: 1.3rem;
+  background-color: white;
+}
+
 .bank__amount {
   color: $primary-green;
   font-family: "Lato";
   font-size: 1.9rem;
   margin: 5px;
+  top: .93rem;
+  left: .93rem;
+  position: absolute;
+  background-color: white;
+  width: 90%;
 }
