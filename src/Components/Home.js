@@ -42,18 +42,20 @@ export const Home = () => {
         </div>
       </div>
       <div className='home__content'>
-      <div className='home__content--image'>
-          <img src="https://i.imgur.com/T6LLdAN.png" alt="Piggy Bank" />
+        <div className='home__content--image'>
+          <img src="https://i.imgur.com/P23TxvT.png" alt="Piggy Bank" />
         </div>
         <div className='home__content--text'>
           <p>Deposit funds into your Piggy Bank. Know how much you have <span className="highlighted-text emphasized">saved towards your goals.</span> Watch your fun money grow, and your <span className="highlighted-text emphasized">wishlist become a reality.</span></p>
         </div>
       </div>
       <div className='home__content'>
-        <Button variant="contained" onClick={toList}>My Wishlist</Button>
-      </div>
-      <div className='home__content'>
-        <Button variant="contained" onClick={handleLogOut}>Log Out</Button>
+      <div className='home__content--image'>
+          <img src="https://i.imgur.com/WGbatc0.png" alt="Transactions" />
+        </div>
+        <div className='home__content--text'>
+          <p>Keep track of every transaction you make. Look back on your <span className="highlighted-text emphasized">history of deposits and purchases.</span></p>
+        </div>
       </div>
     </div>
   )
