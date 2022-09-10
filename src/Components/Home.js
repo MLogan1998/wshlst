@@ -32,12 +32,29 @@ export const Home = () => {
   const userId = localStorage.getItem('f_token');
 
   return (
-    <div>
-      <h1>{user && userId}</h1>
-      <Button variant="contained" onClick={handleLogOut}>Log Out</Button>
-      <Button variant="contained" onClick={toList}>My Wishlist</Button>
-      <Button variant="contained" onClick={toDeposit}>Deposit Funds</Button>
-      <Button variant="contained" onClick={toTransactions}>Transactions</Button>
+    <div className="home">
+      <div className='home__content'>
+        <div className='home__content--image'>
+          <img src="https://i.imgur.com/oncDm4e.png" alt="Wishlist" />
+        </div>
+        <div className='home__content--text'>
+          <p><span className="highlighted-text emphasized">Welcome to wishlist.</span> The app for budgeting your fun money. Create a wishlist to keep track of <span className="highlighted-text emphasized">everything you want,</span> and how much it costs.</p>
+        </div>
+      </div>
+      <div className='home__content'>
+      <div className='home__content--image'>
+          <img src="https://i.imgur.com/T6LLdAN.png" alt="Piggy Bank" />
+        </div>
+        <div className='home__content--text'>
+          <p>Deposit funds into your Piggy Bank. Know how much you have <span className="highlighted-text emphasized">saved towards your goals.</span> Watch your fun money grow, and your <span className="highlighted-text emphasized">wishlist become a reality.</span></p>
+        </div>
+      </div>
+      <div className='home__content'>
+        <Button variant="contained" onClick={toList}>My Wishlist</Button>
+      </div>
+      <div className='home__content'>
+        <Button variant="contained" onClick={handleLogOut}>Log Out</Button>
+      </div>
     </div>
   )
 }
