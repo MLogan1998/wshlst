@@ -12,3 +12,16 @@
 .orange-text { color: $primary-orange }
 
 .red-text { color: $primary-red }
+
+.highlighted-text { 
+  background-color: $primary-green;
+  box-shadow:2px 0 0 $primary-green, -2px 0 0 $primary-green;
+  padding: 2px 0; }
+
+.emphasized {
+  font-weight: 600;
+  font-style: italic;
+  color: rgb(46, 46, 46)
+}
+
+.mp { padding: 5px; }
