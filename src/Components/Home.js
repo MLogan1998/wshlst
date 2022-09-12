@@ -1,11 +1,9 @@
-import { React, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { React } from 'react';
 
 import { useUserAuth } from '../Context/UserAuthContext';
-import { Button } from "@mui/material";
 
 export const Home = () => {
-  const { user, logOut, getUserId } = useUserAuth();
+  const { logOut } = useUserAuth();
 
   const handleLogOut = async () => {
     try{
@@ -14,22 +12,6 @@ export const Home = () => {
       console.log(err);
     }
   }
-
-  const navigate = useNavigate();
-
-  const toList = () => {
-    navigate('/list');
-  }
-
-  const toDeposit = () => {
-    navigate('/deposit');
-  }
-
-  const toTransactions = () => {
-    navigate('/transactions');
-  }
-
-  const userId = localStorage.getItem('f_token');
 
   return (
     <div className="home">

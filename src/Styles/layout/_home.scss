@@ -1,5 +1,4 @@
 .home {
-  // border: 1px solid green;
   height: 95vh;
   overflow: scroll;
   padding: 25px 0px 25px 0px;
@@ -25,15 +24,11 @@
     }
 
     &--text {
-      width: 87%;
+      width: 82%;
       font-weight: bold;
       letter-spacing: .08rem;
       line-height: 2.3rem;
       text-align: justify;
-    }
-
-    &:nth-child(odd) {
-      // background: linear-gradient(to bottom, $primary-green, white);
     }
   }
 }

@@ -1,4 +1,4 @@
-import { React, useState, useContext, useEffect } from 'react';
+import { React, useState, useContext } from 'react';
 import { ItemsContext } from '../Context/ItemsContext'
 import { TextField, IconButton, Alert } from '@mui/material';
 import { makeStyles } from '@mui/styles';
@@ -7,33 +7,14 @@ import SendIcon from '@mui/icons-material/Send';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& .MuiInputAdornment-root": {
-      color: 'white',
-    },
-    "& .MuiFilledInput-underline:after": {
-      borderBottomColor: '#ffd345'
-    },
-    "& .MuiFilledInput-root": {
-      borderRadius: 4,
-      position: 'relative',
-      backgroundColor: "#00000059",
-      "&:hover": {
-        backgroundColor: "#00000059",
-        "@media (hover: none)": {
-          backgroundColor: "#00000059"
-        }
+    "& .MuiInput-underline:after": {
+        borderBottomColor: "#6fef71"
       },
-      "&.Mui-focused": {
-        backgroundColor: "#00000059"
-      },
-      fontWeight: 'bold',
-      color: 'white',
-      fontSize: 20,
-      width: 'auto',
-      padding: '10px 12px',
-    },
+      '& .MuiInputAdornment-root': {
+        padding: '28px 28px',
 
-      } 
+      },
+    } 
   }))
 
 export const Deposit = () => {
@@ -66,26 +47,34 @@ export const Deposit = () => {
   return (
     <div className='container'>
     <div className="deposit__contents">
-      <img className="deposit__contents--image" src="https://i.imgur.com/T6LLdAN.png" alt="Piggy Bank"></img>
-      <TextField id="outlined-basic"
+      <img className="deposit__contents--image" src="https://i.imgur.com/P23TxvT.png" alt="Piggy Bank"></img>
+      <TextField id="standard-adornment-amount"
           label="Amount" 
           type="number"
-          variant="filled"
+          variant="standard"
           className={classes.root}
           onChange={(e) => setAmount(e.target.value)}
           InputLabelProps={{
             style: {
-                color: '#ffd345'
+                color: '#6fef71',
+                fontWeight: 'bold',
+                fontSize: '2rem',
           }}} 
-          InputProps={{ 
-            startAdornment:       <InputAdornment
-            sx={{
-              color: 'white'
-            }}
-            position="start"
-          >
-            $
-          </InputAdornment>,
+          InputProps={{
+            style: {
+              fontWeight: 'bold',
+              fontSize: '2rem',
+              height: '100px'
+            },
+            startAdornment: 
+              <InputAdornment
+                sx={{
+                  color: '#6fef71',
+                }}
+                position="start"
+                >
+                $
+                </InputAdornment>,
             endAdornment: <InputAdornment position="end">
                             <IconButton onClick={handleDepositClick}>
                               <SendIcon />
