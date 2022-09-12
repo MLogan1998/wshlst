@@ -12,7 +12,6 @@
     right: .92rem;
     border-radius: 50%;
     z-index: 2000;
-    box-shadow: 0 1rem 3rem rgba(black, .1);
     text-align: center;
     cursor: pointer;
   }
@@ -60,7 +59,7 @@
     &:visited {
       display: inline-block;
       font-family: $secondary-font;
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: 400;
       padding: 1rem 2rem;
       color: white;
@@ -73,7 +72,7 @@
     &:hover,
     &:active {
       background-position: 100%;
-      color: $primary-red;
+      color: $primary-green-dark;
       transform: translateX(1rem);
     }
   }
