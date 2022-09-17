@@ -32,13 +32,14 @@ export const TransDeposits = () => {
     <div className="deposit__table">
       <DataGrid 
         width='240'
+        height='600'
         // columns={[{ field: 'amount', valueFormatter: ({ value }) => currencyFormatter.format(value), headerName: 'Amount', width: '120'},  {field: 'date', headerName: 'Date'}]}
         columns={columns}
         rows={depos}
         autoHeight
-        // autoPageSize
+        autoPageSize
         // rowsPerPageOptions={10}
-        pageSize={[10]}
+        pageSize={[8]}
         rowsPerPageOptions={[10]}
       />
     </div>

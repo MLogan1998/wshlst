@@ -14,8 +14,8 @@ export const Transactions = () => {
   }
 
   return (
-    <>
-    <Box sx={{ width: '100%' }}>
+    <div className="tabs">
+    <Box>
       <Tabs
         value={value}
         onChange={handleChange}
@@ -28,6 +28,6 @@ export const Transactions = () => {
       </Tabs>
     </Box>
     { value===0 ? <TransDeposits /> : <TransPurchases />}
-    </>
+    </div>
   );
 }
