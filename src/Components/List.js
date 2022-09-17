@@ -23,7 +23,7 @@ export const MyList = () => {
   const myItems = list && list.length ? list.map((item, idx) => (<Item key={idx} item={item} divider={idx < items.length - 1}/>)) : '';
 
   return (
-    <div>
+    <div className="list__container">
           <List
       sx={{
         width: '80%',

@@ -1,9 +1,12 @@
 .deposit__table {
-  width: 400px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  margin: 0 auto;
+  width: 300px;
+  margin-top: 10px;
+  max-height: 600px !important;
+}
+
+.tabs {
+  width: 300px;
+  margin: 60px auto;
 }
 
 .MuiDataGrid-row {
