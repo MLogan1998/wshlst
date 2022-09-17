@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { ItemsContext } from '../Context/ItemsContext';
 
 
 export const TransDeposits = () => {
   const { depos } = useContext(ItemsContext)
+  const [pageSize, setPageSize] = useState(10);
 
   const columns = [
     {
@@ -32,15 +33,10 @@ export const TransDeposits = () => {
     <div className="deposit__table">
       <DataGrid 
         width='240'
-        height='600'
-        // columns={[{ field: 'amount', valueFormatter: ({ value }) => currencyFormatter.format(value), headerName: 'Amount', width: '120'},  {field: 'date', headerName: 'Date'}]}
         columns={columns}
         rows={depos}
         autoHeight
-        autoPageSize
-        // rowsPerPageOptions={10}
-        pageSize={[8]}
-        rowsPerPageOptions={[10]}
+        pageSize={pageSize}
       />
     </div>
   )
